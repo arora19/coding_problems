@@ -20,13 +20,15 @@ void initialize(LinkedList* list) {
 // Search for an element in the linked list
 Node* search(LinkedList* list, int value) {
     Node* current = list->head;
+
+    // Traverse the linked list until the end or equals to value
     while (current != NULL) {
         if (current->data == value) {
-            return current;
+            return current; // return node if value found
         }
         current = current->next;
     }
-    return NULL;
+    return NULL; // if value not found
 }
 
 // Add an element to the linked list
@@ -35,6 +37,7 @@ void add(LinkedList* list, int value) {
     newNode->data = value;
     newNode->next = NULL;
 
+    //if list is empty make new node the head
     if (list->head == NULL) {
         list->head = newNode;
     } else {
